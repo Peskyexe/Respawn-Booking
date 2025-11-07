@@ -1,0 +1,25 @@
+{
+  "name": "respawnexpo-booking",
+  "version": "1.0.0",
+  "description": "For å starte serveren så kjører du bare \"start_server.bat\"\r Nettsiden er på http://localhost:3000",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Peskyexe/Respawn-Booking.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Peskyexe/Respawn-Booking/issues"
+  },
+  "homepage": "https://github.com/Peskyexe/Respawn-Booking#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
