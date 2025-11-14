@@ -68,7 +68,7 @@ nav a:hover {
     height: 80px;
 }
 
-.menuButton {
+.menuOpenButton {
     display: none;
 }
 
@@ -77,7 +77,7 @@ nav a:hover {
         display: none;
     }
 
-    .menuButton {
+    .menuOpenButton {
         display: block;
     }
 }
