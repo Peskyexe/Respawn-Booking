@@ -1,18 +1,19 @@
 const express = require("express");
 const app = express();
+const path = require('path');
 const { readFile } = require("fs").promises;
 
-// app.get("/", (request, response) => {
-//     readFile("./public/booking.html", "utf8", (error, html) => {
-//         if (error) {
-//             response.status(500).send("A server error occurred")
-//         }
-//         response.send(html);
-//     })
-// });
+app.use(express.static(path.join(__dirname, "public")));
+app.use('/assets', express.static(path.join(__dirname, "assets")));
 
 app.get("/", async (request, response) => {
-    response.send( await readFile("./public/booking.html", "utf8") );
+    response.send( await readFile(path.join(__dirname, "public", "home.html"), "utf8"));
 });
 
-app.listen(process.env.PORT || 3000, () => console.log("Server running on http://localhost:3000. To stop the server, press Ctrl + C"))
+app.get("/booking", async (request, response) => {
+    response.send( await readFile(path.join(__dirname, "public", "booking.html"), "utf8"));
+});
+
+app.listen(process.env.PORT || 3000, () => {
+    console.log("Server running on http://localhost:3000. To stop the server, press Ctrl + C");
+});

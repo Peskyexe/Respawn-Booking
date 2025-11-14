@@ -27,7 +27,6 @@ nav li {
 }
 
 nav li:first-child {
-    padding-left: 30px;
     margin-right: auto;
 }
 
@@ -65,10 +64,26 @@ nav a:hover {
     width: 100%;
 }
 
-.sidebar li:first-child {
-    background-color: #652D91;
-}
-
 .logo {
     height: 80px;
+}
+
+.menuButton {
+    display: none;
+}
+
+@media(max-width: 710px) {
+    .hideOnMobile {
+        display: none;
+    }
+
+    .menuButton {
+        display: block;
+    }
+}
+
+@media(max-width: 400px) {
+    .sidebar {
+        width: 100%;
+    }
 }
