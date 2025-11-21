@@ -47,7 +47,7 @@ nav a:hover {
 }
 
 .navbar-no-hover:hover {
-    background-color: x|;
+    background-color: #652D91;
 }
 
 .sidebar {
@@ -124,10 +124,14 @@ nav a:hover {
     color: white;
     padding: 0.5em;
     border-radius: 5px;
-    border-color: #652D91;
+    border: none;
     box-shadow: none;
     font-size: 1.2rem;
     font-weight: bold;
+}
+
+.booking-form-item button:hover {
+    background-color: #4a2069;
 }
 
 @media(max-width: 710px) {
