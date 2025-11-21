@@ -15,5 +15,5 @@ app.get("/booking", async (request, response) => {
 });
 
 app.listen(process.env.PORT || 3000, () => {
-    console.log("Server running on http://localhost:3000. To stop the server, press Ctrl + C");
+    console.log("Server running on http://localhost:3000/booking. To stop the server, press Ctrl + C");
 });
