@@ -18,13 +18,55 @@
             
         </ul>
         <ul>
-            <li><a href="http://localhost:3000/#"><img class="logo" src="/assets/re_spawn_negative.svg" alt="Respawn logo"></a></li>
+            <li><a class="navbar-no-hover" href="http://localhost:3000/#"><img class="logo" src="/assets/re_spawn_negative.svg" alt="Respawn logo"></a></li>
             <li class="hideOnMobile"><a href="http://localhost:3000/booking#">Booking</a></li>
             <li class="hideOnMobile"><a href="#">Om Respawn Expo</a></li>
             <li class="hideOnMobile"><a href="#">Kontakt oss</a></li>
             <li class="menuOpenButton"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26" fill="white"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
         </ul>
     </nav>
-    <h1>booking</h1>
+    <div class="booking-form-container">
+        <ul class="booking-form-item booking-form-left" style="grid-area: box-1">
+            <li>
+                <p>Navn</p>
+                <input type="text" id="form-navn">
+            </li>
+            <li>
+                <p>Adresse</p>
+                <input type="text" id="form-adress">               
+            </li>
+            <li>
+                <p>Telefon</p>
+                <input type="text" id="form-phone">
+            </li>
+            <li>
+                <p>Email</p>
+                <input type="text" id="form-email">
+            </li>
+        </ul>
+        <ul class="booking-form-item booking-form-right" style="grid-area: box-2">
+            <li>
+                <label>
+                    <input type="radio" name="pass" id="saturday-pass">
+                    Lørdags pass
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="radio" name="pass" id="sunday-pass">
+                    Sundags pass
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="radio" name="pass" id="weekend-pass">
+                    Uke pass
+                </label>
+            </li>
+        </ul>
+        <ul class="booking-form-item" style="grid-area: box-3">
+            <button>Meld deg på!</button>
+        </ul>
+    </div>
 </body>
 </html>
