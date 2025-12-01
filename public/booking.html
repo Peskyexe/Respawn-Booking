@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Respawn Expo Booking</title>
-    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/nav.css">
+    <link rel="stylesheet" href="/styles/booking_form.css">
     <link rel="icon" type="image/png" href="/assets/favicon.png">
     <script src="/scripts/booking.js" defer></script>
+    <script src="/scripts/navbar.js" defer></script>
 </head>
 <body>
     <nav>
@@ -26,49 +28,59 @@
             <li class="menuOpenButton"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26" fill="white"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
         </ul>
     </nav>
-    <div class="booking-form-container">
+    <form class="booking-form-container" id="form">
         <ul class="booking-form-item booking-form-left" style="grid-area: box-1">
             <li>
-                <p>Navn</p>
-                <input type="text" id="form-navn">
+                <label for="firstname-input">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/></svg>
+                </label>
+                <input required type="firstname" name="firstname" id="firstname-input" placeholder="Fornavn">
+                <input required type="lastname" name="lastname" id="lastname-input" placeholder="Etternavn">
             </li>
             <li>
-                <p>Adresse</p>
-                <input type="text" id="form-adress">               
+                <label for="adress-input">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M160-120v-480l320-240 320 240v480H560v-280H400v280H160Z"/></svg>
+                </label>
+                <input required type="adress" name="adress" id="adress-input" placeholder="Adresse">               
             </li>
             <li>
-                <p>Telefon</p>
-                <input type="text" id="form-phone">
+                <label for="phone-input">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M80-120q-33 0-56.5-23.5T0-200v-560q0-33 23.5-56.5T80-840h800q33 0 56.5 23.5T960-760v560q0 33-23.5 56.5T880-120H80Zm280-280q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm400 160 80-80-60-80h-66q-6-18-10-38.5t-4-41.5q0-21 4-40.5t10-39.5h66l60-80-80-80q-54 42-87 106.5T640-480q0 69 33 133.5T760-240ZM84-200h552q-42-75-116-117.5T360-360q-86 0-160 42.5T84-200Z"/></svg>
+                </label>
+                <input required type="phone" name="phone" id="phone-input" placeholder="Telefonnummer">
             </li>
             <li>
-                <p>Email</p>
-                <input type="text" id="form-email">
+                <label for="email-input">
+                    <span>@</span>
+                </label>
+                <input required type="email" name="email" id="email-input" placeholder="E-post adresse">
             </li>
         </ul>
         <ul class="booking-form-item booking-form-right" style="grid-area: box-2">
+            <!-- Står ikke noe om en pris for noen av pass typene, derfor er det ikke en pris inkludert. -->
             <li>
                 <label>
-                    <input type="radio" name="pass" id="saturday-pass">
+                    <input required type="radio" name="pass" id="saturday-pass">
                     Lørdags pass
                 </label>
             </li>
             <li>
                 <label>
-                    <input type="radio" name="pass" id="sunday-pass">
+                    <input required type="radio" name="pass" id="sunday-pass">
                     Søndags pass
                 </label>
             </li>
             <li>
                 <label>
-                    <input type="radio" name="pass" id="weekend-pass">
+                    <input required type="radio" name="pass" id="weekend-pass">
                     Uke pass
                 </label>
             </li>
         </ul>
         <ul class="booking-form-item" style="grid-area: box-3">
-            <button id="booking-button">Meld deg på!</button>
+            <button type="submit" id="booking-button">Meld deg på!</button>
         </ul>
         <img class="booking-form-item booking-form-image" style="grid-area: box-4" src="/assets/ai-generated-7987572.jpg" alt="">
-    </div>
+    </form>
 </body>
 </html>

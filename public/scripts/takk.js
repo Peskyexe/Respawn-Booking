@@ -1,15 +1,24 @@
-const menu_close_button = document.querySelector(".menuCloseButton")
-const menu_open_button = document.querySelector(".menuOpenButton")
+// For det meste Co Pilot [
+document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const firstname = params.get('firstname') || '';
+    const pass = params.get('pass') || '';
+    const email = params.get('email') || '';
 
-menu_close_button.addEventListener("click", hideSidebar)
-menu_open_button.addEventListener("click", showSidebar)
+    const passMap = {
+        'saturday-pass': 'Lørdags pass',
+        'sunday-pass': 'Søndags pass',
+        'weekend-pass': 'Uke pass'
+    };
 
-function showSidebar() {
-	const sidebar = document.querySelector(".sidebar");
-	sidebar.style.display = "flex";
-}
+    const passText = passMap[pass] || pass || 'Ukjent pass';
 
-function hideSidebar() {
-	const sidebar = document.querySelector(".sidebar");
-	sidebar.style.display = "none";
-}
+    const fnameEl = document.getElementById('firstname-output');
+    const passEl = document.getElementById('pass-output');
+    const emailEl = document.getElementById('email-output');
+
+    if (fnameEl) fnameEl.textContent = firstname;
+    if (passEl) passEl.textContent = passText;
+    if (emailEl) emailEl.textContent = email;
+});
+// ]

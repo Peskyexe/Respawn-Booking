@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Takk!</title>
-    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/nav.css">
+    <link rel="stylesheet" href="/styles/takk.css">
     <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <script src="/scripts/navbar.js" defer></script>
     <script src="/scripts/takk.js" defer></script>
 </head>
 <body>
@@ -26,6 +28,13 @@
             <li class="menuOpenButton"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26" fill="white"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
         </ul>
     </nav>
-    <h1>Takkside</h1>
+    <div class="wrapper">
+        <h1>Takk!</h1>
+        <div>
+            <p class="main-text">Takk for bestillingen <span class="output-text" id="firstname-output">username</span>!</p>
+            <p class="main-text">Du har bestilt <span class="output-text" id="pass-output">pass type</span> for Respawn Drammen Expo</p>
+            <p class="main-text">Kvittering sendt til <span class="output-text" id="email-output">email</span></p>
+        </div>
+    </div>
 </body>
 </html>

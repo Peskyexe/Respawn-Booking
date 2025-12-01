@@ -1,39 +1,57 @@
-// const { use } = require("react");
+const form = document.getElementById("form")
 
-const menu_close_button = document.querySelector(".menuCloseButton")
-const menu_open_button = document.querySelector(".menuOpenButton")
+form.addEventListener("submit", inputsToJson)
 
-menu_close_button.addEventListener("click", hideSidebar)
-menu_open_button.addEventListener("click", showSidebar)
+function inputsToJson(event) {
+	event.preventDefault();
+	
+	const user_firstname = document.getElementById("firstname-input");
+	const user_lastname = document.getElementById("lastname-input")
+	const user_adress = document.getElementById("adress-input");
+	const user_phone = document.getElementById("phone-input");
+	const user_email = document.getElementById("email-input");
+	
+	const selectedPass = document.querySelector('input[name="pass"]:checked');
+	const passType = selectedPass ? selectedPass.id : null;
 
-const booking_book_button = document.querySelector("#booking-button")
-
-booking_book_button.addEventListener("click", inputsToJson)
-
-function showSidebar() {
-	const sidebar = document.querySelector(".sidebar");
-	sidebar.style.display = "flex";
-}
-
-function hideSidebar() {
-	const sidebar = document.querySelector(".sidebar");
-	sidebar.style.display = "none";
-}
-
-function inputsToJson() {
-	const user_name = document.querySelector("#form-navn");
-	const user_adress = document.querySelector("#form-adress");
-	const user_phone = document.querySelector("#form-phone");
-	const user_email = document.querySelector("#form-email");
-
-	const user_inputs = [
-		name = user_name.value,
-		adress = user_adress.value,
-		phone = user_phone.value,
-		email = user_email.value
-	];
+	const user_inputs = {
+		firstname: user_firstname.value,
+		lastname: user_lastname.value,
+		adress: user_adress.value,
+		phone: user_phone.value,
+		email: user_email.value,
+		pass: passType
+	};
 
 	userJsonString = JSON.stringify(user_inputs)
-
 	console.log(userJsonString);
+	
+	// Dette her var Co Pilot [
+	fetch('/booking/submit', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: userJsonString
+	})
+	.then(response => response.json())
+	.then(data => {
+		if (data.success) {
+			// For det meste Co Pilot [
+			const params = new URLSearchParams({
+				firstname: user_firstname.value || "",
+				pass: passType || "",
+				email: user_email.value || ""
+			});
+			// ]
+			window.location.href = '/booking/takk?' + params.toString();
+		} else {
+			alert('Det oppstod en feil ved innsending av bestillingen');
+		}
+	})
+	.catch(error => {
+		console.error('Error:', error);
+		alert('Det oppstod en feil ved innsending av bestillingen');
+	});
+	// ]
 }
